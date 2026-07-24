@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hemanth K S — Infrastructure & Cloud Engineer</title>
+<meta name="description" content="Hemanth K S — Infrastructure and cloud-focused engineer. Secure systems deployment, endpoint security, SIEM monitoring, and backend development.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2220%22 r=%2210%22 fill=%22%230067b8%22/><circle cx=%2220%22 cy=%2280%22 r=%2210%22 fill=%22%230067b8%22/><circle cx=%2280%22 cy=%2280%22 r=%2210%22 fill=%22%230067b8%22/><path d=%22M50 20L20 80M50 20L80 80M20 80L80 80%22 stroke=%22%230067b8%22 stroke-width=%224%22/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="grain"></div>
+
+<!-- ===== NAV ===== -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#home" class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 40 40"><circle cx="20" cy="8" r="4"/><circle cx="8" cy="32" r="4"/><circle cx="32" cy="32" r="4"/><path d="M20 8L8 32M20 8L32 32M8 32L32 32"/></svg>
+      </span>
+      <span class="brand-text">Hemanth<span class="dot"> </span>K S</span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Certifications</a>
+    </nav>
+    <a href="#contact" class="btn btn-nm btn-small nav-cta">Let's talk</a>
+    <button class="burger" id="burger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <p class="eyebrow"><span class="eyebrow-dot"></span>SYSTEMS &nbsp;/&nbsp; CLOUD &nbsp;/&nbsp; SECURITY</p>
+      <h1 class="hero-title">
+        Hi, I'm Hemanth K S<br>
+        I build <span class="highlight">infrastructure</span><br>
+        that stays up, and <span class="highlight">secure</span>.
+      </h1>
+      <p class="hero-sub" style="text-align: justify;">
+        Infrastructure and cloud-focused engineer working across Linux/Windows server
+        environments, SSH hardening, Docker deployments, and SIEM monitoring with Wazuh.
+        Self-directed home lab practitioner, currently aiming at AWS Cloud Support and
+        Infrastructure Engineer roles.
+      </p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-nm btn-primary">View my work</a>
+        <a href="Hemanth_K_S_Resume.pdf" class="btn btn-nm btn-primary" download>Download resume</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num" data-count="9.32">0</span>
+          <span class="stat-label">CGPA / 10</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" data-count="4">0</span>
+          <span class="stat-label">Months R&D internship</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" data-count="3">0</span>
+          <span class="stat-label">VMs in active home lab</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual" aria-hidden="true">
+      <div class="terminal-card nm-raised">
+        <div class="terminal-bar">
+          <span class="terminal-btn terminal-btn-red"></span>
+          <span class="terminal-btn terminal-btn-yellow"></span>
+          <span class="terminal-btn terminal-btn-green"></span>
+          <p class="terminal-title">hemanth-k-s@homelab: ~</p>
+        </div>
+        <div class="terminal-body" id="terminalBody"></div>
+      </div>
+     
+    </div>
+  </div>
+ 
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section class="section" id="about">
+  <div class="section-inner about-grid">
+    <div class="section-head">
+      <p class="tag-label">whoami</p>
+      <h2>About</h2>
+    </div>
+    <div class="about-text" style="text-align: justify;">
+      <p>
+        I work at the layer most people never see — the servers,
+        the monitoring stacks that quietly keep everything else running. My background
+        blends system engineering, Infrastructure management, and backend development,
+        with a habit of testing things properly before they reach production.
+      </p>
+      <p style="text-align: justify;">
+        Outside of formal work, I run a self-directed home lab: multiple VMs, a full
+        Wazuh SIEM deployment, reverse proxies, and a live Django backend stack —
+        a sandbox where I break things on purpose so they don't break somewhere that matters.
+      </p>
+      <div class="about-chips">
+        <span class="chip">Linux / Windows Server</span>
+        <span class="chip">Tailscale</span>
+        <span class="chip">Docker</span>
+        <span class="chip">SIEM · Wazuh</span>
+        <span class="chip">Django</span>
+      </div>
+    </div>
+    <div class="about-card nm-raised">
+      <pre class="code-block"><span class="c-key">whoami</span>
+<span class="c-out">hemanth-k-s</span>
+<span class="c-key">role</span>       <span class="c-out">System Engineer</span>
+<span class="c-key">focus</span>      <span class="c-out">Cloud / Infrastructure</span>
+<span class="c-key">based_in</span>   <span class="c-out">India</span>
+<span class="c-key">status</span>     <span class="c-out">open to Cloud / Infrastructure roles</span></pre>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SKILLS ===== -->
+<section class="section section-alt" id="skills">
+  <div class="section-inner">
+    <div class="section-head center">
+      <p class="tag-label">stack --list</p>
+      <h2>Skills</h2>
+    </div>
+    <div class="skills-grid">
+
+      <div class="skill-card nm-raised">
+        <div class="skill-icon">
+          <svg viewBox="0 0 24 24"><path d="M6 17a4 4 0 010-8 5 5 0 019.6-1.5A4.5 4.5 0 0118 17H6z"/></svg>
+        </div>
+        <h3>Cloud & DevOps</h3>
+        <div class="chip-row">
+          <span class="chip chip-sm">AWS (EC2, VPC, RDS)</span>
+          <span class="chip chip-sm">Docker</span>
+          <span class="chip chip-sm">Tailscale</span>
+          <span class="chip chip-sm">Nginx</span>
+          <span class="chip chip-sm">VMware Workstation</span>
+        </div>
+      </div>
+
+      <div class="skill-card nm-raised">
+        <div class="skill-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.4 8.4-8 10-4.6-1.6-8-5-8-10V6l8-4z"/></svg>
+        </div>
+        <h3>Security & Monitoring</h3>
+        <div class="chip-row">
+          <span class="chip chip-sm">Wazuh SIEM</span>
+          <span class="chip chip-sm">Sophos Endpoint</span>
+          <span class="chip chip-sm">JWT</span>
+          <span class="chip chip-sm">RSA Auth</span>
+        </div>
+      </div>
+
+      <div class="skill-card nm-raised">
+        <div class="skill-icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v5"/></svg>
+        </div>
+        <h3>System / Infrastructure</h3>
+        <div class="chip-row">
+          <span class="chip chip-sm">Linux (Ubuntu 24.04 LTS)</span>
+          <span class="chip chip-sm">Windows Server 2022</span>
+          <span class="chip chip-sm">GLPI</span>
+          <span class="chip chip-sm">Git</span>
+        </div>
+      </div>
+
+      <div class="skill-card nm-raised">
+        <div class="skill-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+        </div>
+        <h3>Backend & Databases</h3>
+        <div class="chip-row">
+          <span class="chip chip-sm">Python</span>
+          <span class="chip chip-sm">Django</span>
+          <span class="chip chip-sm">DRF</span>
+          <span class="chip chip-sm">Celery</span>
+          <span class="chip chip-sm">PostgreSQL</span>
+          <span class="chip chip-sm">Redis</span>
+          <span class="chip chip-sm">OAuth 2.0</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== EXPERIENCE ===== -->
+<section class="section" id="experience">
+  <div class="section-inner">
+    <div class="section-head">
+      <p class="tag-label">log --experience</p>
+      <h2>Experience</h2>
+    </div>
+
+    <div class="exp-card nm-raised">
+      <div class="exp-head">
+        <div>
+          <h3>Systems R&D Intern</h3>
+          <p class="exp-org">Winman Software India LLP</p>
+        </div>
+        <span class="exp-date">Feb 2026 – May 2026</span>
+      </div>
+      <ul class="exp-list">
+        <li>Architected a secure self-hosted Git server with separate SSH-key-based access for read-only and read/write users, improving repository security and access management.</li>
+        <li>Hardened the Git server via <code>sshd_config</code>, restricting domain users to Git-only operations through a CMD/PowerShell wrapper to prevent unauthorized command execution.</li>
+        <li>Researched and compared endpoint security solutions — Sophos, CrowdStrike, and Trend Micro — against Gartner reports and organizational requirements, supporting migration from the existing Trend Micro environment.</li>
+        <li>Coordinated with Sophos Central and vendor teams to configure and validate endpoint deployment strategies, testing on both lab systems and production devices.</li>
+        <li>Set up secure OpenSSH connectivity between Linux servers and Windows clients for cross-platform automation workflows, improving remote task execution.</li>
+        <li>Deployed and troubleshot Chatwoot for the sales team, validating webhook integrations and finalizing a Docker-based production deployment.</li>
+        <li>Configured email notifications in GLPI and Wazuh to improve monitoring and incident response.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROJECTS ===== -->
+<section class="section section-alt" id="projects">
+  <div class="section-inner">
+    <div class="section-head center">
+      <p class="tag-label">ls ~/projects</p>
+      <h2>Projects</h2>
+    </div>
+
+    <div class="projects-grid">
+
+      <article class="project-card nm-raised">
+        <div class="project-top">
+          <h3>Multi-VM Infrastructure Lab</h3>
+          <span class="exp-date">Jun 2026 – Present</span>
+        </div>
+        <p class="project-sub">VMware Workstation on Windows 11 host</p>
+        <ul class="project-list">
+          <li>Runs Ubuntu 24.04 LTS alongside a Windows Server 2022 VM.</li>
+          <li>self-hosted Git server to manage and version control code repositories.</li>
+          <li>Deployed a full Wazuh SIEM stack (Manager, Indexer, Dashboard v4.9) actively monitoring a Windows host agent for security events and log analysis.</li>
+          <li>Live Django + PostgreSQL 17 + Redis + Daphne (ASGI) backend, with Nginx as reverse proxy in Docker</li>
+        </ul>
+        <div class="chip-row">
+          <span class="chip chip-sm">VMware</span>
+          <span class="chip chip-sm">Wazuh</span>
+          <span class="chip chip-sm">Nginx</span>
+          <span class="chip chip-sm">Docker</span>
+          <span class="chip chip-sm">Git</span>
+          
+        </div>
+      </article>
+
+      <article class="project-card nm-raised">
+        <div class="project-top">
+          <h3>Hyper Dev</h3>
+          <span class="exp-date">Jun 2024 - Aug 2025</span>
+        </div>
+        <p class="project-sub">Freelance and work management platform</p>
+        <ul class="project-list">
+          <li>Built a freelance and workforce management platform for remote collaboration between clients and developers.</li>
+          <li>Implemented OAuth, two-step verification, and RSA-based authentication, plus a dynamic admin URL system to reduce unauthorized access attempts.</li>
+          <li>Designed role-based access control, a job board, and real-time private/team chat and article publishing features.</li>
+          <li>Added sentiment-based project rating using TextBlob for open-source project feedback analysis.</li>
+        </ul>
+        <div class="chip-row">
+          <span class="chip chip-sm">OAuth 2.0</span>
+          <span class="chip chip-sm">RBAC</span>
+          <span class="chip chip-sm">Real-time chat</span>
+          <span class="chip chip-sm">Django</span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== EDUCATION & CERTS ===== -->
+<section class="section" id="education">
+  <div class="section-inner edu-grid">
+    
+
+    <div class="edu-col">
+      <div class="section-head">
+        <p class="tag-label">cat certifications.txt</p>
+        <h2>Certifications</h2>
+      </div>
+      <div class="edu-card nm-raised cert-card">
+        <div class="cert-badge">
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4-3.9-3.8 5.4-.8z"/></svg>
+        </div>
+        <div>
+          <h3>Microsoft Azure — Introduction to Azure</h3>
+          <p class="exp-org">Describe Cloud Concepts · Microsoft Learn</p>
+        </div>
+      </div>
+
+     
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="section contact-section" id="contact">
+  <div class="section-inner">
+    <div class="contact-card nm-raised">
+      <p class="tag-label">ping --connect</p>
+      <h2>Let's build something reliable.</h2>
+      <p class="contact-sub">Open to AWS Cloud Support and Infrastructure Engineer roles — reach out any time.</p>
+      <div class="contact-actions">
+        <a href="mailto:kshemanth777@gmail.com" class="btn btn-nm btn-primary">
+          <svg viewBox="0 0 24 24"><path d="M3 6h18v12H3z"/><path d="M3 6l9 7 9-7"/></svg>
+          kshemanth777@gmail.com
+        </a>
+        <a href="tel:+917019654349" class="btn btn-nm">
+          <svg viewBox="0 0 24 24"><path d="M4 4h5l2 6-3 2a12 12 0 006 6l2-3 6 2v5a2 2 0 01-2 2A17 17 0 013 6a2 2 0 012-2z"/></svg>
+          +91 70196 54349
+        </a>
+        <a href="https://www.linkedin.com/in/hemanth-k-s-14a0722a0/" target="_blank" rel="noopener" class="btn btn-nm">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7M7 7v.01M12 17v-4a2 2 0 014 0v4M12 13v4"/></svg>
+          LinkedIn
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>Hemanth K S · <span id="year"></span></p>
+</footer>
+
+<button class="to-top nm-raised" id="toTop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script src="script.js"></script>
+</body>
+</html>
