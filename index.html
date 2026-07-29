@@ -227,10 +227,11 @@
           <h3>Multi-VM Infrastructure Lab</h3>
           <span class="exp-date">Jun 2026 - Aug 2026</span>
         </div>
-        <p class="project-sub">VMware Workstation on Windows 11 host</p>
+        <p class="project-sub">Virtualized infrastructure for development and testing purposes.</p>
         <ul class="project-list">
           <li>Runs Ubuntu 24.04 LTS headless in Background.</li>
-          <li>self-hosted Git server to manage and version control code repositories.</li>
+          <li>Architected a secure self-hosted Git server with separate SSH-key-based access for read-only and read/write users, improving repository security and access management.</li>
+          <li>Hardened the Git server via <code>sshd_config</code>, restricting domain users to Git-only operations through a CMD/PowerShell wrapper to prevent unauthorized command execution.</li>
           <li>Live Django + PostgreSQL 17 + Redis + Daphne (ASGI) backend, with Nginx as reverse proxy in Docker</li>
         </ul>
         <div class="chip-row">

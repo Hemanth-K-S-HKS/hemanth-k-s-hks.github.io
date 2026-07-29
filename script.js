@@ -69,9 +69,9 @@ const lines = [
   { prompt: '~$ ', text: 'whoami', out: false },
   { prompt: '', text: 'hemanth-k-s', out: true },
   { prompt: '~$ ', text: 'cat role.txt', out: false },
-  { prompt: '', text: 'Infrastructure & Cloud Engineer', out: true },
+  { prompt: '', text: 'System Engineer', out: true },
   { prompt: '~$ ', text: 'systemctl status homelab', out: false },
-  { prompt: '', text: '● active — 2 VMs, Wazuh SIEM, Git Server, Django Stack', out: true },
+  { prompt: '', text: '● active — 2 VMs, Git Server & Django Stack', out: true },
 ];
 
 function typeLine(lineIndex){
