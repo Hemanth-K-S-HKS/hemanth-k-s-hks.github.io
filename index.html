@@ -98,6 +98,7 @@
         <span class="chip">Linux</span>
         <span class="chip">Tailscale</span>
         <span class="chip">Docker</span>
+        <span class="chip">CI/CD</span>
         <span class="chip">Git Server</span>
         <span class="chip">Nginx</span>
         <span class="chip">Django</span>
@@ -300,20 +301,21 @@
           </div>
         </button>
 
-        
+        <!-- CERTIFICATE entry template — duplicate for each PDF certificate.
+             data-type="certificate" + data-pdf = path inside the certification/ folder
         <button type="button" class="edu-card nm-raised cert-card" data-type="certificate"
-                data-pdf="certification/Hemanth_K_S_Resume.pdf"
+                data-pdf="certification/your-certificate.pdf"
                 aria-label="Certificate title, opens PDF preview">
           <div class="cert-badge">
             <svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 7h8M8 11h8M8 15h5"/><path d="M9 22l3-2 3 2"/></svg>
           </div>
           <div class="cert-info">
-            <h3>Aws Cloud Practitioner</h3>
-            <p class="exp-org">AWS skill Builder</p>
+            <h3>Certificate Title</h3>
+            <p class="exp-org">Issuing Organization</p>
             <span class="cert-action">View certificate →</span>
           </div>
         </button>
-       
+        -->
 
       </div>
     </div>
@@ -359,7 +361,7 @@
         <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
       </button>
     </div>
-    <iframe class="cert-modal-frame" id="certModalFrame" title="Certificate PDF preview"></iframe>
+    <iframe class="cert-modal-frame" id="certModalFrame" title="Certificate PDF preview" scrolling="yes"></iframe>
   </div>
 </div>
 
