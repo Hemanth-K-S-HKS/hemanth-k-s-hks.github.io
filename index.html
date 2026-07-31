@@ -283,26 +283,39 @@
         <p class="tag-label">cat certifications.txt</p>
         <h2>Certifications & Badges</h2>
       </div>
-      <div class="edu-card nm-raised cert-card">
-        <div class="cert-badge">
-          <svg viewBox="0 0 24 24"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4-3.9-3.8 5.4-.8z"/></svg>
-        </div>
-        <div>
-          <h3>Introduction to Microsoft Azure</h3>
-          <p class="exp-org">Microsoft Learn</p>
-        </div>
-      </div>
-      <div class="edu-card nm-raised cert-card">
-        <div class="cert-badge">
-          <svg viewBox="0 0 24 24"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4-3.9-3.8 5.4-.8z"/></svg>
-        </div>
-        <div>
-          <h3>Introduction to Cloud 101 - Training Badge</h3>
-          <p class="exp-org">AWS Educate</p>
-        </div>
-      </div>
 
-     
+      <div class="cert-list">
+
+        <!-- BADGE entry: data-type="badge" + data-href = Credly badge URL -->
+        <button type="button" class="edu-card nm-raised cert-card" data-type="badge"
+                data-href="https://www.credly.com/badges/REPLACE-WITH-YOUR-BADGE-ID"
+                aria-label="Introduction to Cloud 101 Training Badge, opens on Credly">
+          <div class="cert-badge">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="5.5"/><path d="M8.2 13.3L6.5 21l5.5-3 5.5 3-1.7-7.7"/></svg>
+          </div>
+          <div class="cert-info">
+            <h3>Introduction to Cloud 101 - Training Badge</h3>
+            <p class="exp-org">AWS Educate</p>
+            <span class="cert-action">View on Credly →</span>
+          </div>
+        </button>
+
+        
+        <button type="button" class="edu-card nm-raised cert-card" data-type="certificate"
+                data-pdf="certification/Hemanth_K_S_Resume.pdf"
+                aria-label="Certificate title, opens PDF preview">
+          <div class="cert-badge">
+            <svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 7h8M8 11h8M8 15h5"/><path d="M9 22l3-2 3 2"/></svg>
+          </div>
+          <div class="cert-info">
+            <h3>Aws Cloud Practitioner</h3>
+            <p class="exp-org">AWS skill Builder</p>
+            <span class="cert-action">View certificate →</span>
+          </div>
+        </button>
+       
+
+      </div>
     </div>
   </div>
 </section>
@@ -335,6 +348,20 @@
 <button class="to-top nm-raised" id="toTop" aria-label="Back to top">
   <svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
 </button>
+
+<!-- ===== CERTIFICATE PDF MODAL ===== -->
+<div class="cert-modal" id="certModal" aria-hidden="true">
+  <div class="cert-modal-overlay" data-cert-close></div>
+  <div class="cert-modal-panel nm-raised" role="dialog" aria-modal="true" aria-labelledby="certModalTitle">
+    <div class="cert-modal-bar">
+      <p class="cert-modal-title" id="certModalTitle">Certificate</p>
+      <button class="cert-modal-close" id="certModalClose" aria-label="Close certificate preview" data-cert-close>
+        <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <iframe class="cert-modal-frame" id="certModalFrame" title="Certificate PDF preview"></iframe>
+  </div>
+</div>
 
 <script src="script.js"></script>
 </body>

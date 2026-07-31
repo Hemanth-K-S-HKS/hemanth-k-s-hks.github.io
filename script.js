@@ -39,30 +39,6 @@ const io = new IntersectionObserver((entries) => {
 }, { threshold: 0.15 });
 revealTargets.forEach(el => io.observe(el));
 
-// ===== Animated stat counters =====
-const stats = document.querySelectorAll('.stat-num');
-const statIO = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (!entry.isIntersecting) return;
-    const el = entry.target;
-    const target = parseFloat(el.dataset.count);
-    const isDecimal = String(target).includes('.');
-    const duration = 1200;
-    const start = performance.now();
-    function tick(now){
-      const p = Math.min((now - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - p, 3);
-      const val = target * eased;
-      el.textContent = isDecimal ? val.toFixed(2) : Math.round(val);
-      if (p < 1) requestAnimationFrame(tick);
-      else el.textContent = isDecimal ? target.toFixed(2) : target;
-    }
-    requestAnimationFrame(tick);
-    statIO.unobserve(el);
-  });
-}, { threshold: 0.5 });
-stats.forEach(el => statIO.observe(el));
-
 // ===== Terminal typing effect =====
 const terminalBody = document.getElementById('terminalBody');
 const lines = [
@@ -121,3 +97,52 @@ const termIO = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.3 });
 termIO.observe(document.querySelector('.terminal-card'));
+
+// ===== Certifications & Badges: click handling =====
+// Each .cert-card carries data-type="badge" | "certificate".
+//   badge       -> data-href points to the Credly badge page, opened in a new tab.
+//   certificate -> data-pdf points to a PDF inside the certification/ folder,
+//                  shown inline in the popup modal below.
+const certModal = document.getElementById('certModal');
+const certModalFrame = document.getElementById('certModalFrame');
+const certModalTitle = document.getElementById('certModalTitle');
+let certLastFocused = null;
+
+function openCertModal(pdfPath, titleText){
+  certLastFocused = document.activeElement;
+  certModalFrame.src = pdfPath;
+  certModalTitle.textContent = titleText || 'Certificate';
+  certModal.classList.add('open');
+  certModal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+  document.getElementById('certModalClose').focus();
+}
+
+function closeCertModal(){
+  certModal.classList.remove('open');
+  certModal.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+  certModalFrame.src = '';
+  if (certLastFocused) certLastFocused.focus();
+}
+
+document.querySelectorAll('.cert-card').forEach(card => {
+  card.addEventListener('click', () => {
+    const type = card.dataset.type;
+    if (type === 'certificate' && card.dataset.pdf) {
+      const titleText = card.querySelector('h3')?.textContent || 'Certificate';
+      openCertModal(card.dataset.pdf, titleText);
+    } else if (type === 'badge' && card.dataset.href) {
+      window.open(card.dataset.href, '_blank', 'noopener');
+    }
+  });
+});
+
+if (certModal) {
+  certModal.querySelectorAll('[data-cert-close]').forEach(el => {
+    el.addEventListener('click', closeCertModal);
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && certModal.classList.contains('open')) closeCertModal();
+  });
+}
