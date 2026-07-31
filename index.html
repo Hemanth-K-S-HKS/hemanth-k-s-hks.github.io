@@ -224,20 +224,20 @@
 
       <article class="project-card nm-raised">
         <div class="project-top">
-          <h3>Multi-VM Infrastructure Lab</h3>
+          <h3>Self-hosted Git Server with automated docker pipeline</h3>
           <span class="exp-date">Jun 2026 - Aug 2026</span>
         </div>
-        <p class="project-sub">Virtualized infrastructure for development and testing purposes.</p>
+        <p class="project-sub">sub title</p>
         <ul class="project-list">
-          <li>Runs Ubuntu 24.04 LTS headless in Background.</li>
-          <li>Architected a secure self-hosted Git server with separate SSH-key-based access for read-only and read/write users, improving repository security and access management.</li>
-          <li>Hardened the Git server via <code>sshd_config</code>, restricting domain users to Git-only operations through a CMD/PowerShell wrapper to prevent unauthorized command execution.</li>
-          <li>Live Django + PostgreSQL 17 + Redis + Daphne (ASGI) backend, with Nginx as reverse proxy in Docker</li>
+          <li>Architected a self-hosted Git server with role-specific SSH key authentication, strengthening repository security and enabling fine-grained access management.</li>
+          <li>Designed a multi-server CI/CD pipeline (Dev → Git Server → Build Server) that automatically builds and pushes a Docker image to a remote container registry whenever code is pushed to the master branch.</li>
+          <li>Developed reusable Git hook templates that bootstrap CI/CD pipelines across newly created repositories, ensuring consistent automation with zero manual configuration.</li>
+          <li>Implemented environment variable based build controls using per-project .env files to manage build flags, registry URLs, and image names, while configuring role-based SSH keys for secure, isolated server-to-server access.</li>
         </ul>
         <div class="chip-row">
-          <span class="chip chip-sm">VMware</span>
-          <span class="chip chip-sm">Wazuh</span>
-          <span class="chip chip-sm">Nginx</span>
+          <span class="chip chip-sm">OpenSSH</span>
+          <span class="chip chip-sm">Bash</span>
+          <span class="chip chip-sm">CI/CD</span>
           <span class="chip chip-sm">Docker</span>
           <span class="chip chip-sm">Git</span>
           
@@ -259,7 +259,8 @@
         <div class="chip-row">
           <span class="chip chip-sm">OAuth 2.0</span>
           <span class="chip chip-sm">RBAC</span>
-          <span class="chip chip-sm">Real-time chat</span>
+          <span class="chip chip-sm">Real-time Private and Groupchat</span>
+          <span class="chip chip-sm">TextBlob</span>
           <span class="chip chip-sm">Django</span>
         </div>
       </article>
