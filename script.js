@@ -105,22 +105,59 @@ termIO.observe(document.querySelector('.terminal-card'));
 //                  shown inline in the popup modal below.
 const certModal = document.getElementById('certModal');
 const certModalFrame = document.getElementById('certModalFrame');
+const certModalTitle = document.getElementById('certModalTitle');
 let certLastFocused = null;
 
-function openCertModal(pdfPath){
+if (window.pdfjsLib) {
+  pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+}
+
+async function renderCertPDF(pdfPath){
+  certModalFrame.innerHTML = '<p class="cert-modal-status">Loading certificate…</p>';
+  if (!window.pdfjsLib) {
+    certModalFrame.innerHTML = `<p class="cert-modal-status">Couldn't load the PDF viewer. <a href="${pdfPath}" target="_blank" rel="noopener">Open the PDF directly</a>.</p>`;
+    return;
+  }
+  try {
+    const pdf = await pdfjsLib.getDocument(pdfPath).promise;
+    certModalFrame.innerHTML = '';
+    const targetWidth = certModalFrame.clientWidth - 48; // account for padding
+    for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+      const page = await pdf.getPage(pageNum);
+      const baseViewport = page.getViewport({ scale: 1 });
+      const scale = targetWidth / baseViewport.width;
+      const viewport = page.getViewport({ scale });
+
+      const canvas = document.createElement('canvas');
+      canvas.className = 'cert-pdf-page';
+      canvas.width = viewport.width;
+      canvas.height = viewport.height;
+      certModalFrame.appendChild(canvas);
+
+      const context = canvas.getContext('2d');
+      await page.render({ canvasContext: context, viewport }).promise;
+    }
+  } catch (err) {
+    console.error('Certificate PDF failed to render:', err);
+    certModalFrame.innerHTML = `<p class="cert-modal-status">Couldn't load the certificate. <a href="${pdfPath}" target="_blank" rel="noopener">Open the PDF directly</a>.</p>`;
+  }
+}
+
+function openCertModal(pdfPath, titleText){
   certLastFocused = document.activeElement;
-  certModalFrame.src = pdfPath;
+  certModalTitle.textContent = titleText || 'Certificate';
   certModal.classList.add('open');
   certModal.setAttribute('aria-hidden', 'false');
   document.body.style.overflow = 'hidden';
   document.getElementById('certModalClose').focus();
+  renderCertPDF(pdfPath);
 }
 
 function closeCertModal(){
   certModal.classList.remove('open');
   certModal.setAttribute('aria-hidden', 'true');
   document.body.style.overflow = '';
-  certModalFrame.src = '';
+  certModalFrame.innerHTML = '';
   if (certLastFocused) certLastFocused.focus();
 }
 
@@ -128,7 +165,8 @@ document.querySelectorAll('.cert-card').forEach(card => {
   card.addEventListener('click', () => {
     const type = card.dataset.type;
     if (type === 'certificate' && card.dataset.pdf) {
-      openCertModal(card.dataset.pdf);
+      const titleText = card.querySelector('h3')?.textContent || 'Certificate';
+      openCertModal(card.dataset.pdf, titleText);
     } else if (type === 'badge' && card.dataset.href) {
       window.open(card.dataset.href, '_blank', 'noopener');
     }
