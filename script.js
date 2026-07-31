@@ -47,7 +47,7 @@ const lines = [
   { prompt: '~$ ', text: 'cat role.txt', out: false },
   { prompt: '', text: 'System Engineer', out: true },
   { prompt: '~$ ', text: 'systemctl status homelab', out: false },
-  { prompt: '', text: '● active — 2 VMs, Git Server & Django Stack', out: true },
+  { prompt: '', text: '● active — 3 VMs, Git Server, Build Server, Production Server', out: true },
 ];
 
 function typeLine(lineIndex){
