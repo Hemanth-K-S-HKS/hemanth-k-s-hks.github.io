@@ -105,13 +105,11 @@ termIO.observe(document.querySelector('.terminal-card'));
 //                  shown inline in the popup modal below.
 const certModal = document.getElementById('certModal');
 const certModalFrame = document.getElementById('certModalFrame');
-const certModalTitle = document.getElementById('certModalTitle');
 let certLastFocused = null;
 
-function openCertModal(pdfPath, titleText){
+function openCertModal(pdfPath){
   certLastFocused = document.activeElement;
   certModalFrame.src = pdfPath;
-  certModalTitle.textContent = titleText || 'Certificate';
   certModal.classList.add('open');
   certModal.setAttribute('aria-hidden', 'false');
   document.body.style.overflow = 'hidden';
@@ -130,8 +128,7 @@ document.querySelectorAll('.cert-card').forEach(card => {
   card.addEventListener('click', () => {
     const type = card.dataset.type;
     if (type === 'certificate' && card.dataset.pdf) {
-      const titleText = card.querySelector('h3')?.textContent || 'Certificate';
-      openCertModal(card.dataset.pdf, titleText);
+      openCertModal(card.dataset.pdf);
     } else if (type === 'badge' && card.dataset.href) {
       window.open(card.dataset.href, '_blank', 'noopener');
     }

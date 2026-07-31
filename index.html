@@ -352,13 +352,10 @@
 <!-- ===== CERTIFICATE PDF MODAL ===== -->
 <div class="cert-modal" id="certModal" aria-hidden="true">
   <div class="cert-modal-overlay" data-cert-close></div>
-  <div class="cert-modal-panel nm-raised" role="dialog" aria-modal="true" aria-labelledby="certModalTitle">
-    <div class="cert-modal-bar">
-      <p class="cert-modal-title" id="certModalTitle">Certificate</p>
-      <button class="cert-modal-close" id="certModalClose" aria-label="Close certificate preview" data-cert-close>
-        <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
-      </button>
-    </div>
+  <div class="cert-modal-panel nm-raised" role="dialog" aria-modal="true" aria-label="Certificate preview">
+    <button class="cert-modal-close" id="certModalClose" aria-label="Close certificate preview" data-cert-close>
+      <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
     <iframe class="cert-modal-frame" id="certModalFrame" title="Certificate PDF preview" scrolling="yes"></iframe>
   </div>
 </div>
