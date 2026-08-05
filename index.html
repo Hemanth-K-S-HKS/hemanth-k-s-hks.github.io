@@ -285,17 +285,10 @@
         </p>
 
         <ul class="project-list">
-          <li>Designed and maintained a dedicated production server connected through a secure Tailscale private network, isolating deployment infrastructure from public access.</li>
-
-          <li>Developed a deployment automation script (<code>script.sh</code>) that pulls the latest Docker image from the private container registry and updates only the web application container, minimizing deployment downtime.</li>
-
-          <li>Implemented container lifecycle management using Docker Compose, allowing controlled rebuilds and restarts of the Django web service without affecting supporting infrastructure.</li>
-
-          <li>Configured persistent volumes and environment-based configuration management to preserve application data and ensure consistent deployments across updates.</li>
-
-          <li>Integrated the production server with the self-hosted Git CI/CD pipeline, enabling code changes pushed to the Git server to automatically build, publish, and deploy updated Docker images.</li>
-
-          <li>Managed application availability, image versioning, and deployment verification through automated shell scripts and secure SSH-based administration.</li>
+          <li>Built a production server connected through Tailscale for secure private deployments.</li>
+          <li>Developed a <code>script.sh</code> deployment script to pull the latest Docker image and rebuild only the Django web container.</li>
+          <li>Managed containerized application deployment using Docker Compose with persistent volumes and environment-based configuration.</li>
+          <li>Integrated the production server with the self-hosted Git CI/CD pipeline for automated application updates.</li>
         </ul>
 
         <div class="chip-row">
