@@ -274,6 +274,42 @@
         </div>
       </article>
 
+      <article class="project-card nm-raised">
+        <div class="project-top">
+          <h3>Production Deployment & Container Orchestration Server</h3>
+          <span class="exp-date">Aug 2026 - Present</span>
+        </div>
+
+        <p class="project-sub">
+          Self-hosted production environment for automated Django application deployment
+        </p>
+
+        <ul class="project-list">
+          <li>Designed and maintained a dedicated production server connected through a secure Tailscale private network, isolating deployment infrastructure from public access.</li>
+
+          <li>Developed a deployment automation script (<code>script.sh</code>) that pulls the latest Docker image from the private container registry and updates only the web application container, minimizing deployment downtime.</li>
+
+          <li>Implemented container lifecycle management using Docker Compose, allowing controlled rebuilds and restarts of the Django web service without affecting supporting infrastructure.</li>
+
+          <li>Configured persistent volumes and environment-based configuration management to preserve application data and ensure consistent deployments across updates.</li>
+
+          <li>Integrated the production server with the self-hosted Git CI/CD pipeline, enabling code changes pushed to the Git server to automatically build, publish, and deploy updated Docker images.</li>
+
+          <li>Managed application availability, image versioning, and deployment verification through automated shell scripts and secure SSH-based administration.</li>
+        </ul>
+
+        <div class="chip-row">
+          <span class="chip chip-sm">Docker</span>
+          <span class="chip chip-sm">Docker Compose</span>
+          <span class="chip chip-sm">Tailscale</span>
+          <span class="chip chip-sm">Shell Scripting</span>
+          <span class="chip chip-sm">Linux</span>
+          <span class="chip chip-sm">SSH</span>
+          <span class="chip chip-sm">Nginx</span>
+          <span class="chip chip-sm">CI/CD</span>
+        </div>
+      </article>
+
     </div>
   </div>
 </section>
