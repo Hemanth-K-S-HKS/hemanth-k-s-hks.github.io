@@ -49,10 +49,9 @@
         that stays up, and <span class="highlight">secure</span>.
       </h1>
       <p class="hero-sub" style="text-align: justify;">
-        Infrastructure and cloud-focused engineer working across Linux/Windows server
+        Platfrom and System Operations focused engineer working across Linux server
         environments, SSH hardening, Docker deployments, and SIEM monitoring with Wazuh.
-        Self-directed home lab practitioner, currently aiming at AWS Cloud Support and
-        Infrastructure Engineer roles.
+        Self-directed home lab practitioner, currently aiming at Platform Engineer and AWS Cloud Support roles.
       </p>
       <div class="hero-actions">
         <a href="#projects" class="btn btn-nm btn-primary">View my work</a>
@@ -88,7 +87,7 @@
       <p>
         I work at the layer most people never see — the servers,
         the monitoring stacks that quietly keep everything else running. My background
-        blends system engineering, Infrastructure management and backend development.
+        blends platfrom engineering, DevOps and backend development.
       </p>
       <p style="text-align: justify;">
         Outside of formal work, I run a self-directed home lab: multiple VMs, git server deployment, reverse proxies, and a live Django backend stack —
@@ -109,8 +108,8 @@
       <pre class="code-block"><span class="c-key">cat</span> now.log
   <span class="c-key">based_in</span>         <span class="c-out">Shimoga, Karnataka, India</span>
   <span class="c-key">relocate</span>         <span class="c-out">Bengaluru · open to remote</span>
-  <span class="c-key">open_to</span>          <span class="c-out">Platform Engineer/Python Developer</span>
-  <span class="c-key">availability</span>     <span class="c-out">Immediate · open to remote</span>
+  <span class="c-key">open_to</span>          <span class="c-out">Platform Engineer/DevOps/Python Developer</span>
+  <span class="c-key">availability</span>     <span class="c-out">Immediate</span>
     </pre>
     </div>
   </div>
@@ -133,6 +132,8 @@
         <div class="chip-row">
           <span class="chip chip-sm">AWS (EC2, VPC, RDS)</span>
           <span class="chip chip-sm">CI/CD</span>
+          <span class="chip chip-sm">ArgoCD</span>
+          <span class="chip chip-sm">Kubernetes</span>
           <span class="chip chip-sm">Docker</span>
           <span class="chip chip-sm">Tailscale</span>
           <span class="chip chip-sm">Bash</span>
@@ -148,8 +149,9 @@
         <h3>Security & Monitoring</h3>
         <div class="chip-row">
           <span class="chip chip-sm">Wazuh</span>
+          <span class="chip chip-sm">Prometheus</span>
           <span class="chip chip-sm">Sophos EDR</span>
-          <span class="chip chip-sm">JWT</span>
+          <span class="chip chip-sm">SSH Hardning</span>
           <span class="chip chip-sm">OAuth 2.0</span>
         </div>
       </div>
@@ -162,7 +164,7 @@
         <div class="chip-row">
           <span class="chip chip-sm">Linux (Ubuntu)</span>
           <span class="chip chip-sm">GLPI</span>
-          <span class="chip chip-sm">Git Server</span>
+          <span class="chip chip-sm">Git</span>
           <span class="chip chip-sm">OpenSSH</span>
           <span class="chip chip-sm">WSUS</span>
         </div>
@@ -229,23 +231,25 @@
 
       <article class="project-card nm-raised">
         <div class="project-top">
-          <h3>Self-hosted Git Server with Automated Docker Pipeline</h3>
-          <span class="exp-date">Jun 2026 - Jul 2026</span>
+          <h3>StageFlow - Self-Hosted Infrastructure &amp; Deployment Platform</h3>
+          <span class="exp-date">Jun 2026 - Aug 2026</span>
         </div>
-        <p class="project-sub">Private repository management and automated CI/CD pipeline</p>
+        <p class="project-sub">Self-hosted infrastructure and deployment platform automating the path from code commit to production deployment</p>
         <ul class="project-list">
-          <li>Architected a self-hosted Git server with role-specific SSH key authentication, strengthening repository security and enabling fine-grained access management.</li>
-          <li>Designed a multi-server CI/CD pipeline (Dev → Git Server → Build Server) that automatically builds and pushes a Docker image to a remote container registry whenever code is pushed to the master branch.</li>
-          <li>Developed reusable Git hook templates that bootstrap CI/CD pipelines across newly created repositories, ensuring consistent automation with zero manual configuration.</li>
-          <li>Implemented environment variable based build controls using per-project .env files to manage build flags, registry URLs, and image names, while configuring role-based SSH keys for secure, isolated server-to-server access.</li>
+          <li><strong>Git Server:</strong> Hosts a self-hosted Git server with role-specific SSH-key access for secure, centralized version control.</li>
+          <li><strong>Build Server:</strong> Runs Jenkins, auto-triggering on master branch commits to build Docker images and push them to a private container registry.</li>
+          <li><strong>Production Server:</strong> Runs Kubernetes, Argo CD, and Prometheus, handling automated GitOps deployments and real-time infrastructure monitoring.</li>
         </ul>
         <div class="chip-row">
+          <span class="chip chip-sm">Git</span>
           <span class="chip chip-sm">OpenSSH</span>
           <span class="chip chip-sm">Bash</span>
-          <span class="chip chip-sm">CI/CD</span>
+          <span class="chip chip-sm">Jenkins</span>
           <span class="chip chip-sm">Docker</span>
-          <span class="chip chip-sm">Git</span>
-          
+          <span class="chip chip-sm">CI/CD</span>
+          <span class="chip chip-sm">Kubernetes</span>
+          <span class="chip chip-sm">Argo CD</span>
+          <span class="chip chip-sm">Prometheus</span>
         </div>
       </article>
 
@@ -271,35 +275,6 @@
           <span class="chip chip-sm">PostgreSQL</span>
           <span class="chip chip-sm">Email Verification</span>
           <span class="chip chip-sm">RSA based Authentication</span>
-        </div>
-      </article>
-
-      <article class="project-card nm-raised">
-        <div class="project-top">
-          <h3>Production Deployment & Container Orchestration Server</h3>
-          <span class="exp-date">Jul 2026 - Aug 2026</span>
-        </div>
-
-        <p class="project-sub">
-          Self-hosted production environment for automated Django application deployment
-        </p>
-
-        <ul class="project-list">
-          <li>Built a production server connected through Tailscale for secure private deployments.</li>
-          <li>Developed a <code>script.sh</code> deployment script to pull the latest Docker image and rebuild only the Django web container.</li>
-          <li>Managed containerized application deployment using Docker Compose with persistent volumes and environment-based configuration.</li>
-          <li>Integrated the production server with the self-hosted Git CI/CD pipeline for automated application updates.</li>
-        </ul>
-
-        <div class="chip-row">
-          <span class="chip chip-sm">Docker</span>
-          <span class="chip chip-sm">Docker Compose</span>
-          <span class="chip chip-sm">Tailscale</span>
-          <span class="chip chip-sm">Shell Scripting</span>
-          <span class="chip chip-sm">Linux</span>
-          <span class="chip chip-sm">SSH</span>
-          <span class="chip chip-sm">Nginx</span>
-          <span class="chip chip-sm">CI/CD</span>
         </div>
       </article>
 
